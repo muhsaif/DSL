@@ -4,6 +4,7 @@
 
 extern int yylex();  // Declare the lexer function
 extern int yyerror(const char *s);  // Declare the error handling function
+
 %}
 
 %union {
@@ -76,3 +77,4 @@ int yyerror(const char *s) {
   }
   return 0;
 }
+
