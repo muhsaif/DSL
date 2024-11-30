@@ -70,12 +70,8 @@
 %%
 
 int main(void) {
-    printf("Enter DSL code:\n");
-    if (yyparse() == 0) {  // If parsing is successful
-        printf("DSL code parsed successfully!\n");
-    } else {
-        printf("Error in parsing DSL code.\n");
-    }
-    return 0;
+  printf("Enter DSL code:\n");
+  yylex();  // Start the lexer
+  return 0;
 }
 

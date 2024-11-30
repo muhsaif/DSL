@@ -69,7 +69,10 @@ mobile_specific: BOTTOM_NAVIGATION LEFT_BRACE "items:" STRING "activeItem:" STRI
 %%
 
 int yyerror(const char *s) {
-    extern int yylineno;  // Declare yylineno to get the current line number
-    fprintf(stderr, "Error: %s at line %d\n", s, yylineno);
-    return 0;
+  if (yychar == ERROR) {
+    printf("Error: Unrecognized token encountered.\n");
+  } else {
+    printf("Error: %s\n", s);
+  }
+  return 0;
 }
