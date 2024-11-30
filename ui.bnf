@@ -1,0 +1,55 @@
+<program> ::= <statement>*
+<statement> ::= <navigation> | <input> | <button> | <data_display> | <form> | <layout> | <feedback> | <mobile_specific>
+
+<navigation> ::= "Navbar" "{" "position:" <position> "style:" <style> "items:" <items> "logo:" <image> "}"
+              | "Sidebar" "{" "position:" <position> "style:" <style> "items:" <items> "}"
+              | "Breadcrumb" "{" "items:" <items> "separator:" <separator> "}"
+              | "Pagination" "{" "currentPage:" <number> "totalPages:" <number> "style:" <style> "}"
+              | "Tabs" "{" "items:" <items> "activeTab:" <tab> "}"
+              | "Drawer" "{" "position:" <position> "style:" <style> "content:" <content> "}"
+              | "Dropdown" "{" "buttonText:" <text> "options:" <options> "style:" <style> "}"
+              | "Stepper" "{" "steps:" <steps> "currentStep:" <step> "orientation:" <orientation> "}"
+
+<input> ::= "TextInput" "{" "placeholder:" <text> "value:" <text> "style:" <style> "}"
+         | "Textarea" "{" "placeholder:" <text> "rows:" <number> "cols:" <number> "}"
+         | "SelectDropdown" "{" "placeholder:" <text> "options:" <options> "}"
+         | "RadioButtons" "{" "name:" <text> "options:" <options> "selected:" <text> "}"
+         | "Checkboxes" "{" "name:" <text> "label:" <text> "checked:" <boolean> "}"
+         | "ToggleSwitch" "{" "label:" <text> "state:" <state> "}"
+         | "FileUpload" "{" "accept:" <text> "buttonText:" <text> "}"
+         | "Slider" "{" "min:" <number> "max:" <number> "value:" <number> "step:" <number> "}"
+         | "DateTimePicker" "{" "type:" <type> "format:" <format> "}"
+         | "NumberInput" "{" "min:" <number> "max:" <number> "value:" <number> "}"
+         | "SearchBox" "{" "placeholder:" <text> "value:" <text> "}"
+         | "Combobox" "{" "placeholder:" <text> "options:" <options> "}"
+
+<button> ::= "PrimaryButton" "{" "text:" <text> "action:" <action> "style:" <style> "}"
+          | "SecondaryButton" "{" "text:" <text> "action:" <action> "}"
+          | "IconButton" "{" "icon:" <icon> "action:" <action> "}"
+          | "FAB" "{" "icon:" <icon> "action:" <action> "position:" <position> "}"
+          | "GroupedButtons" "{" "buttons:" <buttons> "orientation:" <orientation> "}"
+          | "ToggleButton" "{" "text:" <text> "state:" <state> "}"
+
+<data_display> ::= "Card" "{" "title:" <text> "content:" <text> "image:" <image> "footer:" <text> "}"
+                | "Table" "{" "headers:" <headers> "rows:" <rows> "}"
+                | "List" "{" "type:" <type> "items:" <items> "}"
+                | "Accordion" "{" "title:" <text> "content:" <text> "state:" <state> "}"
+                | "Tooltip" "{" "text:" <text> "target:" <text> "}"
+                | "Toast" "{" "message:" <text> "duration:" <time> "type:" <type> "}"
+                | "Alert" "{" "message:" <text> "type:" <type> "}"
+                | "Modal" "{" "title:" <text> "content:" <text> "buttons:" <buttons> "}"
+
+<form> ::= "FormGroup" "{" "label:" <text> "input:" <input> "}"
+         | "ValidationMessage" "{" "field:" <text> "message:" <text> "}"
+
+<layout> ::= "Grid" "{" "columns:" <number> "rows:" <number> "gap:" <gap> "}"
+          | "Flexbox" "{" "direction:" <direction> "wrap:" <wrap> "justify:" <justify> "align:" <align> "}"
+          | "CardLayout" "{" "columns:" <number> "gap:" <gap> "items:" <items> "}"
+
+<feedback> ::= "Feedback" "{" "type:" <type> "message:" <text> "}"
+            | "ConfirmationDialog" "{" "title:" <text> "message:" <text> "buttons:" <buttons> "}"
+
+<mobile_specific> ::= "BottomNavigation" "{" "items:" <items> "activeItem:" <item> "}"
+                   | "SwipeGesture" "{" "direction:" <direction> "action:" <action> "}"
+                   | "PullToRefresh" "{" "action:" <action> "}"
+                   | "InfiniteScroll" "{" "trigger:" <trigger> "action:" <action> "}"
